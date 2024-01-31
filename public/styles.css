@@ -18,7 +18,7 @@
         --background: #292929;
         --text: #e6e6e5;
         --disabled-text: rgba(211, 211, 211, 0.5);
-        --link: skyblue;
+        --link: rgb(100, 130, 141);
     }
 }
 
@@ -28,7 +28,8 @@ body {
     color: var(--text);
 }
 
-a:link, a:visited {
+a:link,
+a:visited {
     color: var(--link);
 }
 
@@ -36,24 +37,32 @@ a:link, a:visited {
     color: var(--disabled-text);
 }
 
-h1, h2 {
+h1,
+h2 {
     margin-top: 0;
 }
 
-body, .wrapper, #bookbinder {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.tab-links {
+    height: 80%;
+    border-bottom: none !important;
+    margin: 0.5em auto;
+    width: 100%;
 }
 
-.wrapper {
-    max-width: 500px;
+.tab-link {
+    font-size:x-large;
 }
 
-.section {
+.tab-content {
     border: 1px solid var(--text);
     padding: 0.5em;
     margin: 0.5em auto;
+    min-height: 70vh;
+    width: 100%;
+}
+
+ul {
+    display:table;
     width: 100%;
 }
 
@@ -61,26 +70,24 @@ body, .wrapper, #bookbinder {
     display: block;
 }
 
-#generate {
-    font-size: 1.5em;
-}
-
 .instruction-indent {
-    margin-left:  25px;
+    margin-left: 25px;
 }
 
 .layout_margin_user_input {
-    width:225px;
-    margin-top:15px;
-    margin-bottom:15px;
+    width: 225px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     text-align: right;
 }
+
 .layout_margin_user_input_field {
     width: 4em;
     margin-left: 10px;
 }
+
 .layout_margin_description {
-    width:225px;
+    width: 225px;
     position: absolute;
     margin-left: 250px;
     font-size: smaller;
@@ -91,6 +98,7 @@ body, .wrapper, #bookbinder {
     margin-left: 10px;
     margin-bottom: 20px;
 }
+
 .layout_spine_label {
     transform: rotate(-90deg);
     position: absolute;
@@ -102,6 +110,7 @@ body, .wrapper, #bookbinder {
     font-family: monospace;
     letter-spacing: 14px;
 }
+
 .grid_layout_page {
     border: 1px solid purple;
     width: 250px;
@@ -110,6 +119,7 @@ body, .wrapper, #bookbinder {
     background: #80008063;
     pointer-events: none;
 }
+
 .pdf_layout_page {
     border: 1px solid orange;
     width: 150px;
@@ -120,44 +130,76 @@ body, .wrapper, #bookbinder {
     background: #ffa50042;
     pointer-events: none;
 }
+
 .layout_margin_info {
     position: absolute;
     padding-left: 255px;
     width: 480px;
     font-size: small;
 }
-.stripes_paper{
-    background: repeating-linear-gradient(
-        45deg,
-        #606dbc,
-        #606dbc 10px,
-        #465298 10px,
-        #465298 20px
-    );
+
+.stripes_paper {
+    background: repeating-linear-gradient(45deg,
+            #606dbc,
+            #606dbc 10px,
+            #465298 10px,
+            #465298 20px);
 }
+
 .stripes_pdf {
-    background: repeating-linear-gradient(
-        133deg,
-        #ffeb3b3b,
-        #ffc1078c 10px,
-        #ff9800 10px,
-        #FF9800 15px
-    );
+    background: repeating-linear-gradient(133deg,
+            #ffeb3b3b,
+            #ffc1078c 10px,
+            #ff9800 10px,
+            #FF9800 15px);
 }
+
 .stripes_sample_box {
-    width:20px;
-    height:20px;
-    display:inline-block;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
 }
+
 .pdf_offset_dimensions_box {
     padding-left: 10px;
     display: inline-block;
     vertical-align: top;
 }
 
+.grid {
+    margin: 2%;
+    display: grid;
+    gap: 2%;
+    grid-template-columns: 24% 74%;
+}
 
-#reset_settings {
-    margin: 1em;
-    margin-right:  1em;
-    float:  right;
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.space-out {
+    margin-top: 10px;
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+}
+
+.center {
+    margin-top: 10px;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+}
+
+button {
+    background-color: #04aa6d1f;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
